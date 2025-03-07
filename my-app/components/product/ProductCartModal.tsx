@@ -36,7 +36,7 @@ export default function ProductCartModal() {
   };
 
   return (
-    <dialog id="product-cart-modal" className={`modal ${toggleCartModal ? "modal-open" : ""} ${stepper !== 1 ? "pt-24 items-baseline" : ""}`}>
+    <dialog id="product-cart-modal" className={`modal ${toggleCartModal ? "modal-open" : ""} ${stepper === 2 ? "pt-24 items-baseline" : ""}`}>
       <div className="modal-box max-w-md p-4">
         <div className="flex justify-between items-center border-b border-gray-300 pb-3 mb-4">
           <h3 className="font-bold text-lg">{renderTitleAndContentByStepper().title}</h3>
