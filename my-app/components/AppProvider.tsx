@@ -1,17 +1,20 @@
 "use client";
 
+import { InitialStateCart } from "@/lib/mock.response";
 import { createContext, useContext, useState } from "react";
-import { InitialCart } from "@/lib/mock.response";
 
 const AppContext = createContext<any>(undefined);
 
 export default function AppProvider({ children }: { children: React.ReactNode }) {
-  const [cart, setCart] = useState(InitialCart);
+  const [cart, setCart] = useState(InitialStateCart);
+  const [toggleCartModal, setToggleCartModal] = useState(false);
 
   return (
     <AppContext.Provider value={{
       cart,
       setCart,
+      toggleCartModal,
+      setToggleCartModal,
     }}>
       {children}
     </AppContext.Provider>

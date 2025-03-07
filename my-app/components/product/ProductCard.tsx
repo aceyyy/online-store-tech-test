@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import ProductTitle from "@/components/product/ProductTitle";
+import ProductTitle from "./ProductTitle";
 
 interface Props {
   id: number;
@@ -9,9 +9,10 @@ interface Props {
   image: string;
   price: number;
   rating: number;
+  isImagePriority: boolean;
 }
 
-export default function ProductCard({ id, title, image, price, rating }: Props) {
+export default function ProductCard({ id, title, image, price, rating, isImagePriority = false }: Props) {
   const roundedRating = Math.round(rating);
 
   return (
@@ -24,6 +25,7 @@ export default function ProductCard({ id, title, image, price, rating }: Props) 
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             fill
             className="object-contain"
+            priority={isImagePriority}
           />
         </div>
       </div>
