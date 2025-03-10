@@ -36,7 +36,7 @@ export default function FormInputField<T extends FieldValues>({
       value = value.slice(0, 4);
     }
 
-    if (value.length >= 3) {
+    if (value.length >= 2) {
       value = `${value.slice(0, 2)}/${value.slice(2)}`;
     }
     setValue(name, value as any);
